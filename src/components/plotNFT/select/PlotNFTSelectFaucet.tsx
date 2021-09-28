@@ -16,7 +16,7 @@ export default function PlotNFTSelectFaucet(props: Props) {
   const openExternal = useOpenExternal();
 
   function handleClick() {
-    openExternal('https://faucet.salvianetwork.net/');
+    openExternal('https://cyberdrops.net/Faucet?coinCode=xslv');
   }
 
   return (
