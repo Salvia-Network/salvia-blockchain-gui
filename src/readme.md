@@ -1,20 +1,15 @@
-# Information for developers
+# salvia-blockchain
 
-## How to use local test and farm locally
+![Alt text](https://salvianetwork.net/img/salvia_logo.svg)
 
-If you want to use local farming and not to connect to the network you need to set
-variable LOCAL_TEST in your .env file. This file is located in the root directory of your salvia-blockchain-gui directory.
+[Salvia](https://salvianetwork.net/) is a modern cryptocurrency forked from [Chia](https://github.com/Chia-Network/chia-blockchain) project, designed to be efficient, decentralized, and secure. Here are some of the features and benefits:
+* [Proof of space and time](https://docs.google.com/document/d/1tmRIb7lgi4QfKkNaxuKOBHRmwbVlGL4f7EsBDr_5xZE/edit) based consensus which allows anyone to farm with commodity hardware
+* Very easy to use full node and farmer GUI and cli (thousands of nodes active on mainnet)
+* Simplified UTXO based transaction model, with small on-chain state
+* Lisp-style Turing-complete functional [programming language](https://chialisp.com/) for money related use cases
+* BLS keys and aggregate signatures (only one signature per block)
+* [Pooling protocol](https://github.com/Chia-Network/chia-blockchain/wiki/Pooling-User-Guide) that allows farmers to have control of making blocks
+* Support for light clients with fast, objective syncing
+* A growing community of farmers and developers around the world
 
-```env
-LOCAL_TEST=true
-```
-
-## Best practices
-
-- using TypeScript and CSS-in-JS because material-ui is using CSS-in-JS
-- Only one exported component per file
-- Same file name like exported function / component / class
-- CSS, gprahql file next to the component file with different extension
-- turn on eslint in your IDE
-- create unit tests for all components
-- all styled components use prefix Styled. For example const StyledMyComponent = styled....
+Please check out the Chia Blockchain for detailed information on Salvia project.

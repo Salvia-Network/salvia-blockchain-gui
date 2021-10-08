@@ -18,6 +18,7 @@ import {
   did_get_did,
   pingWallet,
   getNetworkInfo,
+  get_farmed_amount,
 } from '../modules/message';
 
 import { offerParsed, resetTrades } from '../modules/trade';
@@ -119,6 +120,7 @@ async function get_wallet_transactions(store, id) {
 }
 
 async function get_wallet_balance(store, id) {
+  store.dispatch(get_farmed_amount());
   store.dispatch(get_balance_for_wallet(id));
 }
 
@@ -186,6 +188,14 @@ export const handle_message = async (store, payload, errorProcessed) => {
       }
       if (!state.farming_state.harvester?.plot_directories) {
         store.dispatch(getPlotDirectories());
+      }
+    }
+  } else if ((payload.command === 'keyring_status') || (payload.command === 'keyring_status_changed')) {
+    if (payload.data.success) {
+      const { is_keyring_locked } = payload.data;
+      if (is_keyring_locked == false) {
+        console.log("Keyring is unlocked, refreshing all state");
+        store.dispatch(refreshAllState());
       }
     }
   } else if (payload.command === 'delete_key') {
