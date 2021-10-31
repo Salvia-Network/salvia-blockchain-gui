@@ -5,6 +5,7 @@ import { AlertDialog } from '@salvia/core';
 import useOpenDialog from './useOpenDialog';
 
 type Options = {
+  defaultPath?: string;
   buttonLabel?: string;
 };
 
